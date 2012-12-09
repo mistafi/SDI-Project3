@@ -152,9 +152,9 @@ milesPerGallon(1852,300,35);
 
 motivation(true, "Now that you've started your trip, stay alert."," Keep up the good work!", "No worries. We\'ll be on the road soon.");
 
-milesRemain(1852,"Denver");
+milesRemain(1852,(city[0].name));
 
-gasStops("Denver", 6);
+gasStops((city[0].name), 6);
 
 
 /*console.log (city);
