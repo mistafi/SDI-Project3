@@ -6,8 +6,10 @@
 
 //alert("JavaScript works!");
 
-var tripCity = function city(name) {
-		return name;
+var tripCity = function (name) {
+		var distance = function (miles) {
+			return { "name":name,"distance":[] };
+		}
 };
 
 var city = { 
