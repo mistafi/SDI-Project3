@@ -45,26 +45,25 @@ var city = [
 		3.12,
 		3.25
 	]
+/*	calculateGasAvg: function () {
+		console.log("The average.");
+		var sum = 0;
+		for (var i = 0; i < city[2].gasPrices.length; i++) {
+    		sum += parseInt(city[2].gasPrices[i]); 
+			var avg = sum/city[2].gasPrices.length;
+			console.log("The sum is " + sum + " . The average gas price is $" + avg + " per gallon.");
+		}
+	}*/
 } 
 ];
 
-var key = "name";
+var key = "gasPrices";
 
 console.log (city);
+
+console.log (city[0].gasPrices);
+
 console.log (city[0]);
-
-
-var averageGasPrice = function avgGas() {
-		for (var i = 0; i < city[0].gasPrices.length; i++) {
-    		var sum = parseInt(city[0].gasPrices[i]); 
-			var avg = sum/city[0].gasPrices.length;
-		}
-		return avg;
-}
-
-var averageGas=averageGasPrice();
-
-console.log (averageGas);
 
 
 
@@ -81,6 +80,18 @@ handleData(json);
 
 
 
+/*var averageGasPrice = function avgGas() {
+		for (var i = 0; i < city[0].gasPrices.length; i++) {
+    		var sum = parseInt(city[0].gasPrices[i]); 
+			var avg = sum/city[0].gasPrices.length;
+		}
+		return avg;
+}
+
+var averageGas=averageGasPrice();
+
+console.log (averageGas);
+*/
 
 
 /*var jsonstring = JSON.stringify(json);
