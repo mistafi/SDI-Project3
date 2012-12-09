@@ -82,7 +82,7 @@ var bigTripPlan = function() {
 
 	if ( readyForTrip ==  true) {
 		console.log("Do we have enough money?");
-		var moneyOnHand = prompt('How much money do we have for a trip?', '');
+		var moneyOnHand = 500;
 		if (moneyOnHand >= (city[0].tripCost)) {
 			console.log("We have $" + moneyOnHand + ". We should go to " + city[0].name + ".")
 		} else if (moneyOnHand >= (city[1].tripCost)) {
@@ -92,10 +92,12 @@ var bigTripPlan = function() {
 		} else {
 			console.log("Looks like we\'re not going on a trip this year.")
 		}
-	return true;
+	return city[0].distance;
 	};
 	
 };
+
+var distanceToDrive = city[0].distance;
 
 var onTheRoad = bigTripPlan();
 
@@ -145,14 +147,13 @@ var gasStops = function(destination, numberStops) {
 
 // my output
 
-
 handleData(json);
 
-milesPerGallon(1852,300,35);
+milesPerGallon(distanceToDrive,300,35);
 
 motivation(true, "Now that you've started your trip, stay alert."," Keep up the good work!", "No worries. We\'ll be on the road soon.");
 
-milesRemain(1852,(city[0].name));
+milesRemain(distanceToDrive,(city[0].name));
 
 gasStops((city[0].name), 6);
 
