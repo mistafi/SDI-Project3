@@ -6,6 +6,10 @@
 
 //alert("JavaScript works!");
 
+
+// my variables
+
+
 var tripCity = function (name) {
 		var distance = function (miles) {
 			return { "name":name,"distance":[] };
@@ -57,7 +61,42 @@ var city = [
 } 
 ];
 
+var handleData = function (json) {
+	for (var i = 0; i < json.weatherForecast.length; i++) {
+		var weatherForecast = json.weatherForecast[i];
+		console.log("On " + weatherForecast.day + " it will be " + weatherForecast.temperature + " degrees and " + weatherForecast.conditions + ".");
+		};
+};
+
+var readyForTrip = true;
+
+
 var key = "gasPrices";
+
+var bigTripPlan = function() {
+
+	if ( readyForTrip ==  true) {
+		var moneyOnHand = prompt('How much money do we have for a trip?', '');
+		if (moneyOnHand >= 450) {
+			console.log("We should go to Denver.")
+		} else if (moneyOnHand >= 120) {
+			console.log("We should go to Germantown.")
+		} else if (moneyOnHand >= 40) {
+			console.log("We should go to Georgetown.")
+		} else {
+			console.log("Looks like we\'re not going on a trip this year.")
+		}
+	};
+	
+};
+
+// my output
+
+console.log("Do we have enough money?");
+
+bigTripPlan();
+
+
 
 console.log (city);
 
@@ -67,12 +106,7 @@ console.log (city[0]);
 
 
 
-var handleData = function (json) {
-	for (var i = 0; i < json.weatherForecast.length; i++) {
-		var weatherForecast = json.weatherForecast[i];
-		console.log("On " + weatherForecast.day + " it will be " + weatherForecast.temperature + " degrees and " + weatherForecast.conditions + ".");
-		};
-};
+
 
 handleData(json);
 
