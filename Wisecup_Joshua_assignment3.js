@@ -6,6 +6,49 @@
 
 //alert("JavaScript works!");
 
+var tripCity = function city(name) {
+		return name;
+};
+
+var city = { 
+	name: "Denver",
+	distance: "1852",
+	tripCost: "450",
+	gasPrices: [
+		3.25,
+		3.48,
+		3.35,
+		3.28
+	],
+	name: "Germantown",
+	distance: "125",
+	tripCost: "120",
+	gasPrices: [
+		3.15,
+		3.14,
+		3.18,
+		3.45
+	],
+	name: "Georgetown",
+	distance: "18",
+	tripCost: "40",
+	gasPrices: [
+		3.10,
+		3.09,
+		3.12,
+		3.25
+	]
+};
+
+var key = "name";
+
+console.log (city);
+console.log (city.name);
+console.log (city[key]);
+
+
+
+
 
 var handleData = function (json) {
 	for (var i = 0; i < json.weatherForecast.length; i++) {
