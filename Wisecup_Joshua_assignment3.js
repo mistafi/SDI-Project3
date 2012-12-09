@@ -81,6 +81,7 @@ var key = "gasPrices";
 var bigTripPlan = function() {
 
 	if ( readyForTrip ==  true) {
+		console.log("Do we have enough money?");
 		var moneyOnHand = prompt('How much money do we have for a trip?', '');
 		if (moneyOnHand >= (city[0].tripCost)) {
 			console.log("We have $" + moneyOnHand + ". We should go to " + city[0].name + ".")
@@ -91,26 +92,26 @@ var bigTripPlan = function() {
 		} else {
 			console.log("Looks like we\'re not going on a trip this year.")
 		}
+	return true;
 	};
 	
 };
 
+var onTheRoad = bigTripPlan();
+
 
 // my output
 
-console.log("Do we have enough money?");
 
-bigTripPlan();
+onTheRoad;
 
 handleData(json);
 
-console.log (city);
+/*console.log (city);
 
 console.log (city[0].gasPrices);
 
-console.log (city[0]);
-
-
+console.log (city[0]);*/
 
 
 
