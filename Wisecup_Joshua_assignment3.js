@@ -10,11 +10,11 @@
 // my variables
 
 
-var tripCity = function (name) {
+/*var tripCity = function (name) {
 		var distance = function (miles) {
 			return { "name":name,"distance":[] };
 		}
-};
+};*/
 
 var city = [
 { 
@@ -61,15 +61,20 @@ var city = [
 } 
 ];
 
+var readyForTrip = true;
+
+var checkWeather = true;
+
 var handleData = function (json) {
 	for (var i = 0; i < json.weatherForecast.length; i++) {
 		var weatherForecast = json.weatherForecast[i];
 		console.log("On " + weatherForecast.day + " it will be " + weatherForecast.temperature + " degrees and " + weatherForecast.conditions + ".");
 		};
+	var weatherForecastday = json.weatherForecast.day;
+	if (checkWeather == true) {
+		console.log("We should leave on Friday.")
+	};
 };
-
-var readyForTrip = true;
-
 
 var key = "gasPrices";
 
@@ -77,12 +82,12 @@ var bigTripPlan = function() {
 
 	if ( readyForTrip ==  true) {
 		var moneyOnHand = prompt('How much money do we have for a trip?', '');
-		if (moneyOnHand >= 450) {
-			console.log("We should go to Denver.")
-		} else if (moneyOnHand >= 120) {
-			console.log("We should go to Germantown.")
-		} else if (moneyOnHand >= 40) {
-			console.log("We should go to Georgetown.")
+		if (moneyOnHand >= (city[0].tripCost)) {
+			console.log("We should go to " + city[0].name + ".")
+		} else if (moneyOnHand >= (city[1].tripCost)) {
+			console.log("We should go to " + city[1].name + ".")
+		} else if (moneyOnHand >= (city[2].tripCost)) {
+			console.log("We should go to " + city[2].name + ".")
 		} else {
 			console.log("Looks like we\'re not going on a trip this year.")
 		}
@@ -90,13 +95,14 @@ var bigTripPlan = function() {
 	
 };
 
+
 // my output
 
 console.log("Do we have enough money?");
 
 bigTripPlan();
 
-
+handleData(json);
 
 console.log (city);
 
@@ -105,10 +111,6 @@ console.log (city[0].gasPrices);
 console.log (city[0]);
 
 
-
-
-
-handleData(json);
 
 
 
