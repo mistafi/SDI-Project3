@@ -99,13 +99,63 @@ var bigTripPlan = function() {
 
 var onTheRoad = bigTripPlan();
 
+var milesPerGallon = function(totalMiles, milesPerTank, costPerTank) {
+	var numberStops;
+	var totalmiles;
+	numberStops = Math.floor(totalMiles / milesPerTank);
+	var costPerStop;
+	costPerStop = numberStops * costPerTank;
+		if (numberStops > 0) {
+			console.log("If our drive is " + totalMiles + " miles, then we will have to stop " + numberStops + " times for gas.");
+			console.log("That will cost about $" + costPerStop + " in gas for " + numberStops + " stops.");
+		} else {
+			console.log("We won't have to fill-up until after we get there.")
+		};
+	return numberStops;
+};
+
+var motivation = function(driving,message, message1, message2) {
+	if (driving==true) {
+		var traveling = ["I am driving."]
+		console.log(message + message1);
+	} else {
+		console.log(message2)
+	};
+	return traveling;
+};
+
+var milesRemain = function(milesThisTrip, destination) {
+	for (var miles = 0; miles < milesThisTrip; miles += 300) {
+			var milesRemain = milesThisTrip - miles;
+			console.log("We have " + milesRemain + " miles left. We have gone " + miles + " miles.");
+	}
+	console.log("We made it to " + destination + ".");
+	return milesThisTrip;
+};
+
+var gasStops = function(destination, numberStops) {
+	var stopPoints = ["St. Louis, MO", "Odessa, MO", "Kansas City, MO", "Salina, KS", "Hays, KS", "Burlington, CO"];
+		console.log("On our way to " + destination + " we made " + numberStops + " stops.")
+		for (var i = 0; i < stopPoints.length; i++) {
+				console.log("We stopped at " + stopPoints[i] + ". ")
+		}
+	console.log("It was a great trip!")
+	return stopPoints;
+};
 
 // my output
 
 
-onTheRoad;
-
 handleData(json);
+
+milesPerGallon(1852,300,35);
+
+motivation(true, "Now that you've started your trip, stay alert."," Keep up the good work!", "No worries. We\'ll be on the road soon.");
+
+milesRemain(1852,"Denver");
+
+gasStops("Denver", 6);
+
 
 /*console.log (city);
 
