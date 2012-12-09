@@ -83,11 +83,11 @@ var bigTripPlan = function() {
 	if ( readyForTrip ==  true) {
 		var moneyOnHand = prompt('How much money do we have for a trip?', '');
 		if (moneyOnHand >= (city[0].tripCost)) {
-			console.log("We should go to " + city[0].name + ".")
+			console.log("We have $" + moneyOnHand + ". We should go to " + city[0].name + ".")
 		} else if (moneyOnHand >= (city[1].tripCost)) {
-			console.log("We should go to " + city[1].name + ".")
+			console.log("We have $" + moneyOnHand + ". We should go to " + city[1].name + ".")
 		} else if (moneyOnHand >= (city[2].tripCost)) {
-			console.log("We should go to " + city[2].name + ".")
+			console.log("We have $" + moneyOnHand + ". We should go to " + city[2].name + ".")
 		} else {
 			console.log("Looks like we\'re not going on a trip this year.")
 		}
