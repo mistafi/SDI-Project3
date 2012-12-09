@@ -130,6 +130,10 @@ var milesRemain = function(milesThisTrip, destination) {
 	for (var miles = 0; miles < milesThisTrip; miles += 300) {
 			var milesRemain = milesThisTrip - miles;
 			console.log("We have " + milesRemain + " miles left. We have gone " + miles + " miles.");
+				while (milesThisTrip > 1851) {
+					console.log("You are doing a great job!");
+					milesThisTrip--;
+				};
 	}
 	console.log("We made it to " + destination + ".");
 	return milesThisTrip;
